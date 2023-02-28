@@ -9,25 +9,25 @@ class Bowling
   end
 
   def run
-    while @frames_num < 10 do
+    while @frames_num < 10
       roll_1
-        if @first_roll == 10
+      if @first_roll == 10
         @frames_num += 1
-        @all_frames << [10,0]
-        else
+        @all_frames << [10, 0]
+      else
         roll_2
-        end
+      end
     end
   end
 
   def roll_1
-    @io.puts "Enter first roll"
+    @io.puts 'Enter first roll'
     @first_roll = @io.gets.chomp.to_i
     @each_frame.push(@first_roll)
   end
 
   def roll_2
-    @io.puts "Enter second roll"
+    @io.puts 'Enter second roll'
     @second_roll = @io.gets.chomp.to_i
     @each_frame.push(@second_roll)
     @all_frames << @each_frame
@@ -36,7 +36,7 @@ class Bowling
   end
 end
 
-  def score
+def score
   total = 0
   frame_index = 0
   10.times do |frame_num|
@@ -58,10 +58,5 @@ end
   total
 end
 
-end
-
-
-
-
-    strike = Bowling.new(Kernel)
-    strike.run
+strike = Bowling.new(Kernel)
+strike.run
